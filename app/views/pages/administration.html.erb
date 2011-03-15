@@ -1,0 +1,12 @@
+<table>
+  <tr>
+    <th>Name</th>
+  </tr>
+  <% for user in @users %>
+    <tr>
+      <td><%= link_to user.email, "#" %></td>
+      <td><%= link_to "Edit", edit_user_registration_path(user) %></td>
+    </tr>
+  <% end %>
+</table>
+

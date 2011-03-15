@@ -1,0 +1,18 @@
+<header>
+  <nav class="round">
+  <ul>
+    <li><%= link_to "Home", root_path %></li>
+    <% if user_signed_in? %>
+      <li><%= link_to "Settings", "#" %></li>
+      <li><%= link_to "Signout", destroy_user_session_path %></li>
+      <% if current_user.admin? %>
+        <li><%= link_to "Administration", admin_path %></li>
+      <% end %>
+      <% else %>
+      <li><%= link_to "Signin", new_user_session_path %></li>
+    <% end %>
+    <li><%= link_to "Help", help_path %></li>
+  </ul>
+  </nav>
+</header>
+
